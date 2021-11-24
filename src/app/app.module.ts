@@ -1,32 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import { MatInputModule } from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StudentManagerComponent } from './components/student-manager/student-manager.component';
-import { CourseComponent } from './components/course/course.component';
+import { MaterialModule } from './material/material.module';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
+import { TablesComponent } from './components/tables/tables.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+
+import { MatPaginatorModule } from '@angular/material/paginator';
+ 
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentManagerComponent,
-    CourseComponent
+    SideNavComponent,
+    ToolBarComponent,
+    TablesComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTableModule,
     MatPaginatorModule,
-    MatInputModule,
-    MatFormFieldModule
+    MaterialModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  opened = false;
+ }
